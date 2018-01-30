@@ -56,7 +56,8 @@ function validateCountry(country) {
 	// Check if any country is selected
 	// Check if country belong to given list: [AF, AL, DZ, AS, AD]
 	var word=[];
-
+	if(!country)
+		return false;
 	word.push(AF, AL, DZ, AS, AD);
 	for(i=0;i<5;i++)
 		if(word[i]===country)
@@ -101,5 +102,11 @@ function validateGender(gender) {
 function validateLanguage(lang) {
 	// lang -> list of langs selected
 	// Check if atleast one of the checkbox is checked
-	
+	var count=0;
+	for(i=0;i<lang.length();i++)
+		if(lang[i].checked)
+			count++:
+	if(count)
+		return false;
+	return true;
 }
